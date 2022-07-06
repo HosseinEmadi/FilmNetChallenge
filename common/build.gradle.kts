@@ -54,7 +54,7 @@ dependencies {
     api(LibDependency.COMPOSE_KOIN)
     api(LibDependency.COMPOSE_GLIDE)
     api(LibDependency.COMPOSE_RUNTIME_LIVE_DATA)
-    api("io.coil-kt:coil-compose:2.1.0")
+    api(LibDependency.COMPOSE_COIL)
     api (LibDependency.GLIDE)
     api (LibDependency.GSON)
     api (LibDependency.RETROFIT_CONVERTER)

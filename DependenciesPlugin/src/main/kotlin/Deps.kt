@@ -9,6 +9,8 @@ class Deps : Plugin<Project> {
 }
 
 object Versions {
+    const val COMPOSE_COIL_VERSION = "2.1.0"
+
     const val constraintLayout = "2.1.3"
     const val kotlin = "1.6.10"
     const val appCompat = "1.4.1"
@@ -51,6 +53,7 @@ object LibDependency {
     const val COMPOSE_KOIN = "io.insert-koin:koin-androidx-compose:${Versions.COMPOSE_KOIN_VERSION}"
     const val COMPOSE_GLIDE = "com.github.skydoves:landscapist-glide:${Versions.COMPOSE_GLIDE_VERSION}"
     const val COMPOSE_RUNTIME_LIVE_DATA = "androidx.compose.runtime:runtime-livedata:${Versions.COMPOSE_RUNTIME_LIVE_DATA_VERSION}"
+    const val COMPOSE_COIL = "io.coil-kt:coil-compose:${Versions.COMPOSE_COIL_VERSION}"
 
     const val LIFECYCLE_EXTENSIONS = "androidx.lifecycle:lifecycle-extensions:${Versions.LIFECYCLE_EXT}"
     const val LIFECYCLE_PROCESS = "androidx.lifecycle:lifecycle-process:${Versions.LIFECYCLE}"
