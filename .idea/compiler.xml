@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.8">
+      <module name="BaladChallenge" target="11" />
+      <module name="BaladChallenge.app" target="11" />
+      <module name="BaladChallenge.common" target="11" />
+      <module name="BuildConfigPlugin" target="11" />
+      <module name="DependenciesPlugin" target="11" />
+      <module name="FilmNetChallenge" target="11" />
+      <module name="FilmNetChallenge.app" target="11" />
+      <module name="FilmNetChallenge.common" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
