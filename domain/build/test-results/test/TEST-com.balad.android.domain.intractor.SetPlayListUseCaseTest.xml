@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.balad.android.domain.intractor.SetPlayListUseCaseTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-06-18T05:32:26" hostname="hosseins-MacBook-Pro.local" time="0.862">
+  <properties/>
+  <testcase name="when user have free account and trackList size smaller then playListLimitSize = 5 , setPlayListUseCase must return PlayLisMinSize Exception" classname="com.balad.android.domain.intractor.SetPlayListUseCaseTest" time="0.853"/>
+  <testcase name="when user have free account and trackList size grater or equal to playListLimitSize = 5 , setPlayListUseCase must return Success Result" classname="com.balad.android.domain.intractor.SetPlayListUseCaseTest" time="0.005"/>
+  <testcase name="when user have premium account and trackList size smaller then playListLimitSize = 5 , setPlayListUseCase must return Success Result" classname="com.balad.android.domain.intractor.SetPlayListUseCaseTest" time="0.002"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
