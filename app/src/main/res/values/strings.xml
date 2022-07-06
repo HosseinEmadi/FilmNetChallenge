@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FilmNetChallenge</string>
+    <string name="unknown_error">خطای نامشخص</string>
+    <string name="movie_duration">"مدت : "</string>
 </resources>

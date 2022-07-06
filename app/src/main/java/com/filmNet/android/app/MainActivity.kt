@@ -8,7 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.ui.Modifier
-import com.filmNet.android.app.searchMovies.presenter.ui.Header
+import com.filmNet.android.app.searchMovies.presenter.ui.SearchMoviesPage
 import com.filmNet.android.app.ui.theme.FilmNetChallengeTheme
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setMainView()
-
     }
 
     private fun setMainView() {
@@ -27,8 +26,8 @@ class MainActivity : AppCompatActivity() {
                     modifier = Modifier
                         .fillMaxSize()
                         .background(MaterialTheme.colors.background),
-                    topBar = {Header()}
                 ) {
+                    SearchMoviesPage()
                 }
             }
         }

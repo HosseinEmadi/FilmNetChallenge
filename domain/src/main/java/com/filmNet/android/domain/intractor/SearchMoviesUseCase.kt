@@ -1,10 +1,12 @@
 package com.filmNet.android.domain.intractor
 
+import com.filmNet.android.domain.model.Movie
+import com.filmNet.android.domain.repository.SearchMovieRepository
 
 
-class SearchMoviesUseCase() {
+class SearchMoviesUseCase(private val searchMovieRepository: SearchMovieRepository) {
 
-    fun execute(query: String): Result<Unit> {
-         return Result.failure(Throwable(""))
+    suspend fun execute(query: String): List<Movie> {
+         return searchMovieRepository.searchMovies(query)
     }
 }

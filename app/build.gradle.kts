@@ -46,5 +46,7 @@ android {
 dependencies {
 
     api(project(":common"))
+    implementation(project(":domain"))
+    implementation(project(":data"))
 
 }
