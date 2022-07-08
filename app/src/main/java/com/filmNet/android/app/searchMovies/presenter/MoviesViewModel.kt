@@ -2,14 +2,11 @@ package com.filmNet.android.app.searchMovies.presenter
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.filmNet.android.base.baseviewmodel.CoroutineDispatcherProvider
-import com.filmNet.android.base.baseviewmodel.FilmNetViewModel
+import com.filmNet.android.app.baseviewmodel.CoroutineDispatcherProvider
+import com.filmNet.android.app.baseviewmodel.FilmNetViewModel
 import com.filmNet.android.domain.intractor.SearchMoviesUseCase
 import com.filmNet.android.domain.model.Movie
-import com.filmNet.android.utils.Failed
-import com.filmNet.android.utils.LoadableData
-import com.filmNet.android.utils.Loaded
-import com.filmNet.android.utils.Loading
+import com.filmNet.android.domain.model.Result
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -20,43 +17,32 @@ class MoviesViewModel(
 ): FilmNetViewModel(coroutineDispatcherProvider) {
 
 
-    private val _movies = MutableLiveData<List<Movie>>()
-    val moviesLiveData: LiveData<List<Movie>>
+    private val _movies = MutableLiveData<Result<List<Movie>>>()
+    val moviesLiveData: LiveData<Result<List<Movie>>>
         get() = _movies
 
-    private val _moviesState = MutableLiveData<LoadableData<List<Movie>>>()
-    val moviesStateLiveData: LiveData<LoadableData<List<Movie>>>
-        get() = _moviesState
-
     private var searchJob : Job? = null
+    private var lastQuery = ""
 
-    var lastQuery = ""
     fun searchMovie(query: String){
 
         if(lastQuery == query.trim())
             return
+
         lastQuery = query.trim()
-        _moviesState.postValue(Loading)
+
+        _movies.postValue(Result.Loading)
 
         searchJob?.cancel()
          searchJob = launch {
              delay(SEARCH_DELAY_TIME)
 
-            onBg {
-                runCatching {
-                    searchPlaceUseCase.execute(query)
-                    }
-
-                }.onSuccess { upComingList ->
-                _moviesState.postValue(Loaded(upComingList))
-                _movies.postValue(upComingList)
-
-                }.onFailure {
-                _moviesState.postValue(Failed(it))
-
-                }
-            }
-        }
+             onBg {
+                 val r = searchPlaceUseCase.execute(query)
+                 _movies.postValue(r)
+             }
+         }
+    }
 
     companion object{
         private const val SEARCH_DELAY_TIME = 1000L
