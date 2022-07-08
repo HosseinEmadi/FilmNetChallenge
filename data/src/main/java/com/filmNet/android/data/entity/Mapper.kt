@@ -10,7 +10,3 @@ fun List<MovieDto>.mapToMovies() = map { movieDto ->
 }
 
 fun CoverImageDto.mapToCoverImage() = CoverImage(path)
-
-
-
-
